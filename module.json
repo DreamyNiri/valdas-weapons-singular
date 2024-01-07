@@ -1,0 +1,42 @@
+{
+  "id": "valdas-weapons",
+  "title": "Valda's Weapons",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  }, 
+  "authors": [
+    {
+      "name": "Sinantrarion",
+      "discord": "sinantrarion",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "/valdas-weapons.mjs"
+  ],
+  "packs": [
+    {
+      "name": "weapons-valda",
+      "label": "Items (Valda)",
+      "path": "packs/weapons-valda",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    }
+  ]
+}
