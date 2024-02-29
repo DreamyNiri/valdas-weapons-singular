@@ -1,7 +1,7 @@
 {
   "id": "valdas-weapons",
-  "title": "Valda's Weapons",
-  "version": "1.0.0",
+  "title": "Deyzeria's Valda's Weapons",
+  "version": "2.0.0",
   "compatibility": {
     "minimum": "11",
     "verified": "11"
@@ -17,8 +17,8 @@
   }, 
   "authors": [
     {
-      "name": "Sinantrarion",
-      "discord": "sinantrarion",
+      "name": "Deyzeria",
+      "discord": "deyzeria",
       "flags": {}
     }
   ],
