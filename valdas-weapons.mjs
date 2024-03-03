@@ -1,15 +1,14 @@
 import registerBaseSettingsValda from "./settings.mjs";
 
 function PrepareWeaponProfs() {
-  var conf = CONFIG.DND5E;
-  conf.weaponProficiencies['exo'] = "Exotic Weapons";
-  conf.weaponProficienciesMap['exoticM'] = 'exo';
-  conf.weaponProficienciesMap['exoticR'] = 'exo';
-
-  conf.weaponTypes['exoticM'] = 'Exotic Melee';
-  conf.weaponTypes['exoticR'] = 'Exotic Ranged';
-
+  const conf = CONFIG.DND5E;
   if (game.settings.get("valdas-weapons", "exotic-weapons")) {
+    conf.weaponProficiencies['exo'] = "Exotic Weapons";
+    conf.weaponProficienciesMap['exoticM'] = 'exo';
+    conf.weaponProficienciesMap['exoticR'] = 'exo';
+
+    conf.weaponTypes['exoticM'] = 'Exotic Melee';
+    conf.weaponTypes['exoticR'] = 'Exotic Ranged';
 
     var exotic = [
       // Exotic Melee
@@ -55,7 +54,7 @@ function PrepareWeaponProfs() {
     });
   }
 
-  var wIds = [
+  var weaponIds = [
     // Martial Melee
     { name: "bayonet", id: "ui2mBESo9pSeyGHb" },
     { name: "catchpole", id: "ThzFjWeDCkUlWEHM" },
@@ -93,44 +92,131 @@ function PrepareWeaponProfs() {
     { name: "shuriken", id: "Dfb3iaH0xOCIAmyh" },
   ]
 
-  wIds.forEach(el => {
+  weaponIds.forEach(el => {
     conf.weaponIds[el.name] = "valdas-weapons.weapons-valda." + el.id;
   });
 
+  // ---------------------------- //
+  // AMMO
+  var ammunition = [
+    { abbr: "ballistabolt", id: "JkJM2jXIuWnxOmg3", name: "" },
+    { abbr: "needles", id: "60b4tYM3Rp9gp1gO", name: "" },
+    { abbr: "greatbowarrow", id: "b9qtV3prku5nNzlj", name: "" },
+    { abbr: "javelinatlatl", id: "9pFndNn45SJ3c08v", name: "" },
+    { abbr: "slingbullet", id: "bYwhpxUPdFMOAMkB", name: "" },
+  ];
 
-  conf.weaponProperties['automatic'] = 'Automatic';
-  conf.weaponProperties['concealable'] = 'Concealable';
-  conf.weaponProperties['double'] = 'Double';
-  conf.weaponProperties['dry'] = 'Dry';
-  conf.weaponProperties['elegant'] = 'Elegant';
-  conf.weaponProperties['explosive'] = 'Explosive';
-  conf.weaponProperties['fist'] = 'Fist';
-  conf.weaponProperties['foregrip'] = 'Foregrip';
-  conf.weaponProperties['heat'] = 'Heat';
-  conf.weaponProperties['massive'] = 'Massive';
-  conf.weaponProperties['misfire'] = 'Misfire';
-  conf.weaponProperties['mounted'] = 'Mounted';
-  conf.weaponProperties['parrying'] = 'Parrying';
-  conf.weaponProperties['precision'] = 'Precision';
-  conf.weaponProperties['returning'] = 'Returning';
-  conf.weaponProperties['rocket'] = 'Rocket';
-  conf.weaponProperties['scatter'] = 'Scatter';
-  conf.weaponProperties['sighted'] = 'Sighted';
-  conf.weaponProperties['superheavy'] = 'Superheavy';
-  conf.weaponProperties['switch'] = 'Switch';
-  conf.weaponProperties['tension'] = 'Tension';
-  conf.weaponProperties['trip'] = 'Trip';
-  conf.weaponProperties['twinshot'] = 'Twinshot';
+  // ammunition.forEach(ammo => {
+  //   CONFIG.DND5E.ammoIds[ammo.abbr] = `valdas-weapons.weapons-valda.${ammo.id}`;
+  //   CONFIG.DND5E.consumableTypes.ammo.subtypes[ammo.abbr] = ammo.name;
+  // });
+
+  // ---------------------------- //
 
   if (game.settings.get("valdas-weapons", "firearm-proficiency")) {
+    CONFIG.DND5E.weaponProficiencies["simf"] = "Simple Firearms";
+    CONFIG.DND5E.weaponProficiencies["marf"] = "Martial Firearms";
 
+    CONFIG.DND5E.weaponProficienciesMap["simpleF"] = "simf";
+    CONFIG.DND5E.weaponProficienciesMap["martialF"] = "marf";
+
+    CONFIG.DND5E.weaponTypes["simpleF"] = "Simple Firearms";
+    CONFIG.DND5E.weaponTypes["martialF"] = "Martial Firearms";
+
+    var firearms = [
+      //Modern
+      { name: "handgun", id: "iurfPwCcgixLBxIE" },
+      { name: "submachinegun", id: "WPwQTIHPiKg8slYl" },
+      //Industrial
+      { name: "sawedoffshotgun", id: "dkUT1mbg2vmUv5jV" },
+      { name: "revolver", id: "cbpaTxyL6ibROCVD" },
+      { name: "doublebarrelshotgun", id: "PkWXm9bZYsClaJEz" },
+      { name: "gatlinggun", id: "H1bzrKyI2pVjJizZ" },
+
+      { name: "assaultrifle", id: "DLvtDWfYf76EECwA" },
+      { name: "grenadelauncher", id: "3HdS6rebNb2bkz8G" },
+      { name: "magnum", id: "BuhIlmEaz6EuIgXM" },
+      { name: "pumpshotgun", id: "v7IN3vXTaPXQZZ5V" },
+      { name: "rocketlauncher", id: "EoHHgkZGoL99PVmu" },
+      { name: "sniperrifle", id: "SVr7bGaTw3FZsC6P" }
+    ]
+
+    
+    var ammunitionFirearm = [
+      { abbr: "bullet", id: "Ku6kXugCECpSvyTC", name: "Bullet" },
+      { abbr: "grenade", id: "tQu7k2BVVCd2VwPt", name: "Grenade" },
+      { abbr: "rocket", id: "rDlgaum10X6jZZQ3", name: "Rocket" },
+      { abbr: "shell", id: "8f2K2MrWkk4z6kTp", name: "Shell" },
+    ];
+
+    ammunitionFirearm.forEach(ammo => {
+      CONFIG.DND5E.ammoIds[ammo.abbr] = `valdas-weapons.weapons-valda.${ammo.id}`;
+      CONFIG.DND5E.consumableTypes.ammo.subtypes[ammo.abbr] = ammo.name;
+    });
+
+
+    if (game.settings.get("valdas-weapons", "exotic-weapons")) {
+      CONFIG.DND5E.weaponProficiencies["exof"] = "Exotic Firearms";
+      CONFIG.DND5E.weaponProficienciesMap["exoticF"] = "exof";
+      CONFIG.DND5E.weaponTypes["exoticF"] = "Exotic Firearms";
+
+      firearms.push(
+        { name: "antimaterialrifle", id: "lL08ue1wvtv1rn5h" },
+        { name: "assaultshotgun", id: "f7LfS9oILjh372hR" },
+        { name: "briefcasegun", id: "GA0uB8HmFbBBVXYG" },
+        { name: "explosivemagnum", id: "nSmY1kGckGdbpnnr" },
+        { name: "multirocketlauncher", id: "VWp3Ds5YcCAKVgBT" },
+        { name: "revolvinggrenadelauncher", id: "o6O27HpzsVweSauj" }
+      )
+    }
+
+
+    firearms.forEach(el => {
+      conf.weaponIds[el.name] = "valdas-weapons.weapons-valda." + el.id;
+    });
   }
 
   //ammoIds armorProficiencies[exolgt] armorProficienciesMap exolight = exolgt armorIds["banded"] = id 
 }
 
+function prepareWeaponProperties() {
+  var weaponProp = {
+    automatic: "Automatic",
+    concealable: "Concealable",
+    double: "Double",
+    dry: "Dry",
+    elegant: "Elegant",
+    explosive: "Explosive",
+    fist: "Fist",
+    foregrip: "Foregrip",
+    heat: "Heat",
+    massive: "Massive",
+    misfire: "Misfire",
+    mounted: "Mounted",
+    parrying: "Parrying",
+    precision: "Precision",
+    returning: "Returning",
+    rocket: "Rocket",
+    scatter: "Scatter",
+    sighted: "Sighted",
+    superheavy: "Superheavy",
+    switch: "Switch",
+    tension: "Tension",
+    trip: "Trip",
+    twinshot: "Twinshot"
+  }
+
+  for (const [key, name] of Object.entries(weaponProp)) {
+    CONFIG.DND5E.itemProperties[key] = {
+      label: name
+    }
+    CONFIG.DND5E.validProperties.weapon.add(key);
+  }
+}
+
 Hooks.once("init", () => {
   registerBaseSettingsValda();
 
+  prepareWeaponProperties();
   PrepareWeaponProfs();
 });
