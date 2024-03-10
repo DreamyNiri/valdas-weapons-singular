@@ -1,7 +1,7 @@
 {
   "id": "valdas-weapons",
   "title": "Deyzeria's Valda's Weapons",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "compatibility": {
     "minimum": "11",
     "verified": "11"
@@ -38,5 +38,8 @@
       "system": "dnd5e",
       "flags": {}
     }
-  ]
+  ],
+  "manifest": "https://raw.githubusercontent.com/Deyzeria/valdas-weapons/master/module.json",
+  "url": "https://github.com/Deyzeria/valdas-weapons",
+  "download": "https://github.com/Deyzeria/valdas-weapons/archive/refs/heads/main.zip"
 }
