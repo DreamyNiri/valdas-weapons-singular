@@ -114,14 +114,14 @@ function PrepareWeaponProfs() {
   // ---------------------------- //
 
   if (game.settings.get("valdas-weapons", "firearm-proficiency")) {
-    CONFIG.DND5E.weaponProficiencies["simf"] = "Simple Firearms";
-    CONFIG.DND5E.weaponProficiencies["marf"] = "Martial Firearms";
+    CONFIG.DND5E.weaponProficiencies["simf"] = "Simple Firearm";
+    CONFIG.DND5E.weaponProficiencies["marf"] = "Martial Firearm";
 
     CONFIG.DND5E.weaponProficienciesMap["simpleF"] = "simf";
     CONFIG.DND5E.weaponProficienciesMap["martialF"] = "marf";
 
-    CONFIG.DND5E.weaponTypes["simpleF"] = "Simple Firearms";
-    CONFIG.DND5E.weaponTypes["martialF"] = "Martial Firearms";
+    CONFIG.DND5E.weaponTypes["simpleF"] = "Simple Firearm";
+    CONFIG.DND5E.weaponTypes["martialF"] = "Martial Firearm";
 
     var firearms = [
       //Modern
@@ -156,9 +156,9 @@ function PrepareWeaponProfs() {
 
 
     if (game.settings.get("valdas-weapons", "exotic-weapons")) {
-      CONFIG.DND5E.weaponProficiencies["exof"] = "Exotic Firearms";
+      CONFIG.DND5E.weaponProficiencies["exof"] = "Exotic Firearm";
       CONFIG.DND5E.weaponProficienciesMap["exoticF"] = "exof";
-      CONFIG.DND5E.weaponTypes["exoticF"] = "Exotic Firearms";
+      CONFIG.DND5E.weaponTypes["exoticF"] = "Exotic Firearm";
 
       firearms.push(
         { name: "antimaterialrifle", id: "lL08ue1wvtv1rn5h" },
